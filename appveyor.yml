@@ -21,12 +21,13 @@ before_build:
 - ps: . .\patch-version.ps1 src\stashbox-hangfire\stashbox.hangfire.csproj $($env:build_version)
 
 build_script:
-- msbuild /t:Restore /p:Configuration=%CONFIGURATION% stashbox.extensions.sln
+- msbuild /t:Restore stashbox.extensions.sln
+- nuget restore stashbox.extensions.sln
 - msbuild /t:Build /p:Configuration=%CONFIGURATION% stashbox.extensions.sln
   
 after_build:
 - msbuild /t:Pack /p:IncludeSymbols=true /p:SymbolPackageFormat=snupkg /p:Configuration=%CONFIGURATION% /p:PackageOutputPath=..\artifacts src\stashbox-hangfire\stashbox.hangfire.csproj
-- nuget pack src\stashbox-owin\stashbox.owin.csproj -Properties "Configuration=Release" -Symbols -IncludeReferencedProjects -OutputDirectory ..\artifacts
+- nuget pack src\stashbox-owin\stashbox.owin.csproj -Properties "Configuration=%CONFIGURATION%" -Symbols -IncludeReferencedProjects -OutputDirectory ..\artifacts
 
 test:
   assemblies:
