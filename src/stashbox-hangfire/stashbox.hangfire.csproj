@@ -1,0 +1,33 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <Copyright>Copyright © Peter Csajtai 2020</Copyright>
+    <AssemblyTitle>Stashbox Hangfire Extension</AssemblyTitle>
+    <Authors>Peter Csajtai</Authors>
+    <Company>Peter Csajtai</Company>
+    <TargetFrameworks>net45;netstandard1.3;netstandard2.0</TargetFrameworks>
+    <AssemblyName>Hangfire.Stashbox</AssemblyName>
+    <RootNamespace>Hangfire.Stashbox</RootNamespace>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <Product>Hangfire.Stashbox</Product>
+    <PackageId>Hangfire.Stashbox</PackageId>
+    <Description>Hangfire integration for Stashbox.</Description>
+    <PackageTags>Stashbox;Stashbox Hangfire;stashbox-hangfire;Dependency Injection;DI</PackageTags>
+    <PackageIcon>icon.png</PackageIcon>
+    <PackageProjectUrl>https://github.com/z4kn4fein/stashbox-hangfire</PackageProjectUrl>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <RepositoryType>git</RepositoryType>
+    <RepositoryUrl>https://github.com/z4kn4fein/stashbox-hangfire</RepositoryUrl>
+    <Version>1.0.0</Version>
+    <WarningsAsErrors>true</WarningsAsErrors>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Hangfire.Core" Version="1.7.11" />
+    <PackageReference Include="Stashbox" Version="3.2.8" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\..\img\icon.png" Pack="true" PackagePath="" />
+  </ItemGroup>
+</Project>
