@@ -1,4 +1,4 @@
-# stashbox-webapi-owin [![Build status](https://img.shields.io/appveyor/ci/pcsajtai/stashbox-extensions/main.svg?label=appveyor)](https://ci.appveyor.com/project/pcsajtai/stashbox-extensions/branch/master) [![NuGet Version](https://buildstats.info/nuget/Stashbox.AspNet.WebApi.Owin)](https://www.nuget.org/packages/Stashbox.AspNet.WebApi.Owin/)
+# stashbox-webapi-owin [![Build status](https://img.shields.io/appveyor/ci/pcsajtai/stashbox-extensions/main.svg?label=appveyor)](https://ci.appveyor.com/project/pcsajtai/stashbox-extensions/branch/main) [![NuGet Version](https://buildstats.info/nuget/Stashbox.AspNet.WebApi.Owin)](https://www.nuget.org/packages/Stashbox.AspNet.WebApi.Owin/)
 ASP.NET Web API OWIN integration for Stashbox which provides the same functionality as the [standard WebApi integration](https://github.com/z4kn4fein/stashbox-extensions/tree/main/src/stashbox-web-webapi) but with the scope management of the [OWIN package](https://github.com/z4kn4fein/stashbox-extensions/tree/main/src/stashbox-owin).
 
 ## Usage

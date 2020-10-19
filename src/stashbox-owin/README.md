@@ -1,4 +1,4 @@
-# stashbox-owin [![Build status](https://img.shields.io/appveyor/ci/pcsajtai/stashbox-extensions/main.svg?label=appveyor)](https://ci.appveyor.com/project/pcsajtai/stashbox-extensions/branch/master) [![NuGet Version](https://buildstats.info/nuget/Stashbox.Owin)](https://www.nuget.org/packages/Stashbox.Owin/)
+# stashbox-owin [![Build status](https://img.shields.io/appveyor/ci/pcsajtai/stashbox-extensions/main.svg?label=appveyor)](https://ci.appveyor.com/project/pcsajtai/stashbox-extensions/branch/main) [![NuGet Version](https://buildstats.info/nuget/Stashbox.Owin)](https://www.nuget.org/packages/Stashbox.Owin/)
 OWIN integration for Stashbox which provides dependency injection and scope management for your custom OWIN middlewares.
 
 ## Usage
