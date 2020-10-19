@@ -1,0 +1,49 @@
+environment:
+  build_version: 3.0.0
+
+version: $(build_version)-{build}
+
+pull_requests:
+  do_not_increment_build_number: true
+  
+configuration: Release
+
+image: Visual Studio 2019
+
+assembly_info:
+  patch: true
+  file: '**\AssemblyInfo.*'
+  assembly_version: $(build_version)
+  assembly_file_version: $(build_version)
+  assembly_informational_version: $(build_version)
+
+before_build:
+- ps: . .\patch-version.ps1 src\stashbox-hangfire\stashbox.hangfire.csproj $($env:build_version)
+
+build_script:
+- msbuild /t:Restore /p:Configuration=%CONFIGURATION% stashbox.extensions.sln
+- msbuild /t:Build /p:Configuration=%CONFIGURATION% stashbox.extensions.sln
+  
+after_build:
+- msbuild /t:Pack /p:IncludeSymbols=true /p:SymbolPackageFormat=snupkg /p:Configuration=%CONFIGURATION% /p:PackageOutputPath=..\artifacts src\stashbox-hangfire\stashbox.hangfire.csproj
+- nuget pack src\stashbox-owin\stashbox.owin.csproj -Properties "Configuration=Release" -Symbols -IncludeReferencedProjects -OutputDirectory ..\artifacts
+
+test:
+  assemblies:
+    only:
+      - 'test\**\Stashbox.*.dll'
+      - 'test\**\Hangfire.Stashbox.dll'
+  
+artifacts:
+- path: artifacts\Stashbox.*.nupkg
+  name: NuGet
+- path: artifacts\Stashbox.*.snupkg
+  name: NuGet Symbol Packages
+
+notifications:
+- provider: Email
+  to:
+  - peter.csajtai@outlook.com
+  on_build_success: false
+  on_build_failure: true
+  on_build_status_changed: true
