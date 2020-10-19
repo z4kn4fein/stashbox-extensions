@@ -27,17 +27,16 @@ build_script:
   
 after_build:
 - msbuild /t:Pack /p:IncludeSymbols=true /p:SymbolPackageFormat=snupkg /p:Configuration=%CONFIGURATION% /p:PackageOutputPath=..\..\artifacts src\stashbox-hangfire\stashbox.hangfire.csproj
-- nuget pack src\stashbox-owin\stashbox.owin.csproj -Properties "Configuration=%CONFIGURATION%" -Symbols -IncludeReferencedProjects -SymbolPackageFormat snupkg -OutputDirectory src\artifacts
+- nuget pack src\stashbox-owin\stashbox.owin.csproj -Properties "Configuration=%CONFIGURATION%" -Symbols -IncludeReferencedProjects -SymbolPackageFormat snupkg -OutputDirectory artifacts
 
-test:
-  assemblies:
-    only:
-      - 'test\**\*.Tests.dll'
+test_script:
+- dotnet test test\stashbox-hangfire\stashbox.hangfire.tests.csproj -c %CONFIGURATION% --no-build
+- vstest.console /logger:Appveyor "test\stashbox-owin\bin\%CONFIGURATION%\Stashbox.Owin.Tests.dll"
   
 artifacts:
-- path: artifacts\Stashbox.*.nupkg
+- path: artifacts\*.nupkg
   name: NuGet
-- path: artifacts\Stashbox.*.snupkg
+- path: artifacts\*.snupkg
   name: NuGet Symbol Packages
 
 notifications:
