@@ -26,14 +26,13 @@ build_script:
 - msbuild /t:Build /p:Configuration=%CONFIGURATION% stashbox.extensions.sln
   
 after_build:
-- msbuild /t:Pack /p:IncludeSymbols=true /p:SymbolPackageFormat=snupkg /p:Configuration=%CONFIGURATION% /p:PackageOutputPath=..\artifacts src\stashbox-hangfire\stashbox.hangfire.csproj
-- nuget pack src\stashbox-owin\stashbox.owin.csproj -Properties "Configuration=%CONFIGURATION%" -Symbols -IncludeReferencedProjects -OutputDirectory ..\artifacts
+- msbuild /t:Pack /p:IncludeSymbols=true /p:SymbolPackageFormat=snupkg /p:Configuration=%CONFIGURATION% /p:PackageOutputPath=..\..\artifacts src\stashbox-hangfire\stashbox.hangfire.csproj
+- nuget pack src\stashbox-owin\stashbox.owin.csproj -Properties "Configuration=%CONFIGURATION%" -Symbols -IncludeReferencedProjects -SymbolPackageFormat snupkg -OutputDirectory src\artifacts
 
 test:
   assemblies:
     only:
-      - 'test\**\Stashbox.*.dll'
-      - 'test\**\Hangfire.Stashbox.dll'
+      - 'test\**\*.Tests.dll'
   
 artifacts:
 - path: artifacts\Stashbox.*.nupkg
