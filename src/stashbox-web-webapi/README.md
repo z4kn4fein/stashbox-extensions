@@ -1,4 +1,4 @@
-# stashbox-web-webapi [![Build status](https://ci.appveyor.com/api/projects/status/3c4fv3c94f9cpfa1/branch/master?svg=true)](https://ci.appveyor.com/project/pcsajtai/stashbox-web-webapi/branch/master) [![NuGet Version](https://buildstats.info/nuget/Stashbox.Web.WebApi)](https://www.nuget.org/packages/Stashbox.Web.WebApi/)
+# stashbox-web-webapi [![Build status](https://img.shields.io/appveyor/ci/pcsajtai/stashbox-extensions/master.svg?label=appveyor)](https://ci.appveyor.com/project/pcsajtai/stashbox-extensions/branch/master) [![NuGet Version](https://buildstats.info/nuget/Stashbox.Web.WebApi)](https://www.nuget.org/packages/Stashbox.Web.WebApi/)
 ASP.NET Web API integration for Stashbox which provides dependency injection for controllers, action filters and model validators.
 
 ## Usage
@@ -37,7 +37,7 @@ public static class WebApiConfig
 ```
 
 ## Owin
-You can use this package with OWIN but it's recommended to use the [OWIN related web api package](https://github.com/z4kn4fein/stashbox-webapi-owin) instead.
+You can use this package with OWIN but it's recommended to use the [OWIN related web api package](https://github.com/z4kn4fein/stashbox-extensions/tree/main/src/stashbox-webapi-owin) instead.
 ```c#
 public class Startup
 {
