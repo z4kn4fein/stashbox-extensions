@@ -14,10 +14,10 @@
     <Description>Hangfire integration for Stashbox.</Description>
     <PackageTags>Stashbox;Stashbox Hangfire;stashbox-hangfire;Dependency Injection;DI</PackageTags>
     <PackageIcon>icon.png</PackageIcon>
-    <PackageProjectUrl>https://github.com/z4kn4fein/stashbox-hangfire</PackageProjectUrl>
-    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <PackageProjectUrl>https://github.com/z4kn4fein/stashbox-extensions/src/stashbox-hangfire</PackageProjectUrl>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <RepositoryType>git</RepositoryType>
-    <RepositoryUrl>https://github.com/z4kn4fein/stashbox-hangfire</RepositoryUrl>
+    <RepositoryUrl>https://github.com/z4kn4fein/stashbox-extensions</RepositoryUrl>
     <Version>1.0.0</Version>
     <WarningsAsErrors>true</WarningsAsErrors>
   </PropertyGroup>
