@@ -28,10 +28,19 @@ build_script:
 after_build:
 - msbuild /t:Pack /p:IncludeSymbols=true /p:SymbolPackageFormat=snupkg /p:Configuration=%CONFIGURATION% /p:PackageOutputPath=..\..\artifacts src\stashbox-hangfire\stashbox.hangfire.csproj
 - nuget pack src\stashbox-owin\stashbox.owin.csproj -Properties "Configuration=%CONFIGURATION%" -Symbols -IncludeReferencedProjects -SymbolPackageFormat snupkg -OutputDirectory artifacts
+- nuget pack src\stashbox-signalr\stashbox.signalr.csproj -Properties "Configuration=%CONFIGURATION%" -Symbols -IncludeReferencedProjects -SymbolPackageFormat snupkg -OutputDirectory artifacts
+- nuget pack src\stashbox-signalr-owin\stashbox.signalr.owin.csproj -Properties "Configuration=%CONFIGURATION%" -Symbols -IncludeReferencedProjects -SymbolPackageFormat snupkg -OutputDirectory artifacts
+- nuget pack src\stashbox-webapi-owin\stashbox.webapi.owin.csproj -Properties "Configuration=%CONFIGURATION%" -Symbols -IncludeReferencedProjects -SymbolPackageFormat snupkg -OutputDirectory artifacts
+- nuget pack src\stashbox-web-mvc\stashbox.web.mvc.csproj -Properties "Configuration=%CONFIGURATION%" -Symbols -IncludeReferencedProjects -SymbolPackageFormat snupkg -OutputDirectory artifacts
+- nuget pack src\stashbox-web-webapi\stashbox.web.webapi.csproj -Properties "Configuration=%CONFIGURATION%" -Symbols -IncludeReferencedProjects -SymbolPackageFormat snupkg -OutputDirectory artifacts
 
 test_script:
 - dotnet test test\stashbox-hangfire\stashbox.hangfire.tests.csproj -c %CONFIGURATION% --no-build
-- vstest.console /logger:Appveyor "test\stashbox-owin\bin\%CONFIGURATION%\Stashbox.Owin.Tests.dll"
+- vstest.console /logger:Appveyor "test\stashbox-owin\bin\%CONFIGURATION%\Stashbox.Owin.Tests.dll" /TestAdapterPath:packages\MSTest.TestAdapter.2.1.2\build\_common\
+- vstest.console /logger:Appveyor "test\stashbox-signalr\bin\%CONFIGURATION%\Stashbox.SignalR.Tests.dll" /TestAdapterPath:packages\MSTest.TestAdapter.2.1.2\build\_common\
+- vstest.console /logger:Appveyor "test\stashbox-signalr-owin\bin\%CONFIGURATION%\Stashbox.AspNet.SignalR.Owin.Tests.dll" /TestAdapterPath:packages\MSTest.TestAdapter.2.1.2\build\_common\
+- vstest.console /logger:Appveyor "test\stashbox-webapi-owin\bin\%CONFIGURATION%\Stashbox.AspNet.WebApi.Owin.Tests.dll" /TestAdapterPath:packages\MSTest.TestAdapter.2.1.2\build\_common\
+- vstest.console /logger:Appveyor "test\stashbox-web-webapi\bin\%CONFIGURATION%\Stashbox.Web.WebApi.Tests.dll" /TestAdapterPath:packages\MSTest.TestAdapter.2.1.2\build\_common\
   
 artifacts:
 - path: artifacts\*.nupkg

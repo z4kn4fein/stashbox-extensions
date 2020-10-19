@@ -23,7 +23,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Hangfire.Core" Version="1.7.11" />
+    <PackageReference Include="Hangfire.Core" Version="1.7.16" />
     <PackageReference Include="Stashbox" Version="3.2.8" />
   </ItemGroup>
 
