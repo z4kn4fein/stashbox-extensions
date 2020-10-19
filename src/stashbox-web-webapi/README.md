@@ -1,4 +1,4 @@
-# stashbox-web-webapi [![Build status](https://img.shields.io/appveyor/ci/pcsajtai/stashbox-extensions/master.svg?label=appveyor)](https://ci.appveyor.com/project/pcsajtai/stashbox-extensions/branch/master) [![NuGet Version](https://buildstats.info/nuget/Stashbox.Web.WebApi)](https://www.nuget.org/packages/Stashbox.Web.WebApi/)
+# stashbox-web-webapi [![Build status](https://img.shields.io/appveyor/ci/pcsajtai/stashbox-extensions/main.svg?label=appveyor)](https://ci.appveyor.com/project/pcsajtai/stashbox-extensions/branch/master) [![NuGet Version](https://buildstats.info/nuget/Stashbox.Web.WebApi)](https://www.nuget.org/packages/Stashbox.Web.WebApi/)
 ASP.NET Web API integration for Stashbox which provides dependency injection for controllers, action filters and model validators.
 
 ## Usage
