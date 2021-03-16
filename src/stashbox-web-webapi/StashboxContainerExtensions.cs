@@ -94,7 +94,7 @@ namespace Stashbox
             var assembliesResolver = config.Services.GetAssembliesResolver();
             var typeResolver = config.Services.GetHttpControllerTypeResolver();
             container.RegisterTypes(typeResolver.GetControllerTypes(assembliesResolver), null,
-                context => context.WithLifetime(new ScopedLifetime()));
+               configurator: context => context.WithLifetime(new ScopedLifetime()));
 
             return container;
         }

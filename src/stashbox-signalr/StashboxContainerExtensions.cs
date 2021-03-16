@@ -68,7 +68,7 @@ namespace Stashbox
             if (assemblies.Length > 0)
                 container.RegisterAssemblies(assemblies,
                     type => typeof(IHub).IsAssignableFrom(type),
-                        context => context.WithoutDisposalTracking());
+                       configurator: context => context.WithoutDisposalTracking());
 
             return container;
         }
@@ -87,7 +87,7 @@ namespace Stashbox
             Shield.EnsureNotNull(container, nameof(container));
 
             if (types.Length > 0)
-                container.RegisterTypes(types, type => typeof(IHub).IsAssignableFrom(type), context => context.WithoutDisposalTracking());
+                container.RegisterTypes(types, type => typeof(IHub).IsAssignableFrom(type), configurator: context => context.WithoutDisposalTracking());
 
             return container;
         }
@@ -108,7 +108,7 @@ namespace Stashbox
             if (assemblies.Length > 0)
                 container.RegisterAssemblies(assemblies,
                     type => typeof(PersistentConnection).IsAssignableFrom(type),
-                        context => context.WithoutDisposalTracking());
+                       configurator: context => context.WithoutDisposalTracking());
 
             return container;
         }
@@ -127,7 +127,7 @@ namespace Stashbox
             Shield.EnsureNotNull(container, nameof(container));
 
             if (types.Length > 0)
-                container.RegisterTypes(types, type => typeof(PersistentConnection).IsAssignableFrom(type), context => context.WithoutDisposalTracking());
+                container.RegisterTypes(types, type => typeof(PersistentConnection).IsAssignableFrom(type), configurator: context => context.WithoutDisposalTracking());
 
             return container;
         }

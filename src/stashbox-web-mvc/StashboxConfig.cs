@@ -58,7 +58,7 @@ namespace Stashbox.Web.Mvc
                 .Where(assembly => !assembly.IsDynamic && !assembly.GlobalAssemblyCache);
 
             container.RegisterAssemblies(controllers, type => typeof(IController).IsAssignableFrom(type),
-                context => context.WithLifetime(new ScopedLifetime()));
+               configurator: context => context.WithLifetime(new ScopedLifetime()));
         }
 
         private static void RemoveDefaultProviders()
