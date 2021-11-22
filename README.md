@@ -1,5 +1,5 @@
 # stashbox-extensions
-[![Appveyor build status](https://img.shields.io/appveyor/ci/pcsajtai/stashbox-extensions/main.svg?label=appveyor)](https://ci.appveyor.com/project/pcsajtai/stashbox-extensions/branch/main) [![Travis CI build status](https://img.shields.io/travis/com/z4kn4fein/stashbox-extensions/main.svg?label=travis-ci)](https://travis-ci.com/z4kn4fein/stashbox-extensions)
+[![Appveyor build status](https://img.shields.io/appveyor/ci/pcsajtai/stashbox-extensions/main.svg?label=appveyor)](https://ci.appveyor.com/project/pcsajtai/stashbox-extensions/branch/main) [![Travis CI build status](https://img.shields.io/travis/com/z4kn4fein/stashbox-extensions/main.svg?label=travis-ci)](https://app.travis-ci.com/github/z4kn4fein/stashbox-extensions)
 
 This is an aggregator project for [Stashbox](https://github.com/z4kn4fein/stashbox) based extensions.
 
