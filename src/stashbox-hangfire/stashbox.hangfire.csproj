@@ -1,11 +1,11 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <Copyright>Copyright © Peter Csajtai 2020</Copyright>
+    <Copyright>Copyright © Peter Csajtai 2021</Copyright>
     <AssemblyTitle>Stashbox Hangfire Extension</AssemblyTitle>
     <Authors>Peter Csajtai</Authors>
     <Company>Peter Csajtai</Company>
-    <TargetFrameworks>net45;netstandard1.3;netstandard2.0</TargetFrameworks>
+    <TargetFrameworks>net45;netstandard2.1</TargetFrameworks>
     <AssemblyName>Hangfire.Stashbox</AssemblyName>
     <RootNamespace>Hangfire.Stashbox</RootNamespace>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
@@ -24,7 +24,7 @@
 
   <ItemGroup>
     <PackageReference Include="Hangfire.Core" Version="1.7.16" />
-    <PackageReference Include="Stashbox" Version="3.6.3" />
+    <PackageReference Include="Stashbox" Version="4.1.0" />
   </ItemGroup>
 
   <ItemGroup>

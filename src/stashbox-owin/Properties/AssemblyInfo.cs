@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Peter Csajtai")]
 [assembly: AssemblyProduct("Stashbox.Owin")]
-[assembly: AssemblyCopyright("Copyright © Peter Csajtai 2020")]
+[assembly: AssemblyCopyright("Copyright © Peter Csajtai 2021")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
