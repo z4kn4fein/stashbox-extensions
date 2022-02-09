@@ -8,20 +8,25 @@ using System.Web;
 namespace Stashbox.Web.Mvc
 {
     /// <summary>
-    /// Represents a per request lifetime.
+    /// Represents a per web request lifetime.
     /// </summary>
-    public class PerRequestLifetime : FactoryLifetimeDescriptor
+    public class PerWebRequestLifetime : FactoryLifetimeDescriptor
     {
         /// <inheritdoc />
         protected override int LifeSpan { get; } = 10;
 
         /// <inheritdoc />
-        protected override Expression ApplyLifetime(Func<IResolutionScope, object> factory, ServiceRegistration serviceRegistration, ResolutionContext resolutionContext,
+        protected override Expression ApplyLifetime(Func<IResolutionScope, IRequestContext, object> factory, ServiceRegistration serviceRegistration, ResolutionContext resolutionContext,
             Type resolveType) =>
             Constants.GetScopedValueMethod.MakeGenericMethod(resolveType)
-                .CallStaticMethod(resolutionContext.CurrentScopeParameter, factory.AsConstant(), serviceRegistration.RegistrationId.AsConstant(typeof(object)));
+                .CallStaticMethod(
+                resolutionContext.CurrentScopeParameter, 
+                factory.AsConstant(),
+                resolutionContext.RequestContextParameter,
+                serviceRegistration.RegistrationId.AsConstant(typeof(object)));
 
-        private static TValue CollectScopedInstance<TValue>(IResolutionScope scope, Func<IResolutionScope, object> factory, object scopeId)
+        private static TValue CollectScopedInstance<TValue>(IResolutionScope scope, Func<IResolutionScope, IRequestContext, object> factory, 
+            IRequestContext requestContext, object scopeId)
             where TValue : class
         {
             if (HttpContext.Current == null)
@@ -33,11 +38,11 @@ namespace Stashbox.Web.Mvc
             TValue instance;
             if (HttpContext.Current.Items[StashboxPerRequestScopeProvider.ScopeKey] is IResolutionScope requestScope)
             {
-                instance = factory(requestScope) as TValue;
+                instance = factory(requestScope, requestContext) as TValue;
                 HttpContext.Current.Items[scopeId] = instance;
             }
             else
-                instance = factory(scope) as TValue;
+                instance = factory(scope, requestContext) as TValue;
 
             return instance;
         }

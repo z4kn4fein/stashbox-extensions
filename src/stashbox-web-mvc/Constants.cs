@@ -4,6 +4,6 @@ namespace Stashbox.Web.Mvc
 {
     internal static class Constants
     {
-        internal static MethodInfo GetScopedValueMethod = typeof(PerRequestLifetime).GetTypeInfo().GetDeclaredMethod("CollectScopedInstance");
+        internal static MethodInfo GetScopedValueMethod = typeof(PerWebRequestLifetime).GetTypeInfo().GetDeclaredMethod("CollectScopedInstance");
     }
 }
