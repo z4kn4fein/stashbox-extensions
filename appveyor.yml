@@ -1,5 +1,5 @@
 environment:
-  build_version: 4.1.0
+  build_version: 4.1.1
 
 version: $(build_version)-{build}
 
@@ -10,6 +10,11 @@ configuration: Release
 
 image: Visual Studio 2019
 
+skip_commits:
+  files:
+    - .github/
+    - '**/*.md'
+
 assembly_info:
   patch: true
   file: '**\AssemblyInfo.*'
@@ -17,8 +22,14 @@ assembly_info:
   assembly_file_version: $(build_version)
   assembly_informational_version: $(build_version)
 
-before_build:
-- ps: . .\patch-version.ps1 src\stashbox-hangfire\stashbox.hangfire.csproj $($env:build_version)
+dotnet_csproj:
+  patch: true
+  file: '**\*.csproj'
+  version: $(build_version)
+  package_version: $(build_version)
+  assembly_version: $(build_version)
+  file_version: $(build_version)
+  informational_version: $(build_version)
 
 build_script:
 - msbuild /t:Restore stashbox.extensions.sln
