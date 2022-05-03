@@ -17,7 +17,7 @@ namespace Stashbox.Owin
 
             Shield.EnsureNotNull(scope, "Stashbox lifetime scope.");
 
-            var middleware = scope.Resolve<Func<OwinMiddleware, TMiddleware>>(nullResultAllowed: true);
+            var middleware = scope.ResolveOrDefault<Func<OwinMiddleware, TMiddleware>>();
             if (middleware == null)
                 await base.Next.Invoke(context);
             else

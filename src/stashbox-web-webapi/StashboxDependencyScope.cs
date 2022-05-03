@@ -21,7 +21,7 @@ namespace Stashbox.Web.WebApi
         }
 
         /// <inheritdoc />
-        public object GetService(Type serviceType) => this.dependencyResolver.Resolve(serviceType, nullResultAllowed: true);
+        public object GetService(Type serviceType) => this.dependencyResolver.ResolveOrDefault(serviceType);
 
         /// <inheritdoc />
         public IEnumerable<object> GetServices(Type serviceType) => this.dependencyResolver.ResolveAll(serviceType);

@@ -23,7 +23,7 @@ namespace Stashbox.AspNet.SignalR
 
         /// <inheritdoc />
         public override object GetService(Type serviceType) =>
-            this.dependencyResolver.Resolve(serviceType, nullResultAllowed: true) ?? base.GetService(serviceType);
+            this.dependencyResolver.ResolveOrDefault(serviceType) ?? base.GetService(serviceType);
 
         /// <inheritdoc />
         public override IEnumerable<object> GetServices(Type serviceType)

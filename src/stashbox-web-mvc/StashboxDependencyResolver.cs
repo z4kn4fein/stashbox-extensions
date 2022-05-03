@@ -21,7 +21,7 @@ namespace Stashbox.Web.Mvc
 
         /// <inheritdoc />
         public object GetService(Type serviceType) =>
-                this.scopeProvider.GetOrCreateScope().Resolve(serviceType, nullResultAllowed: true);
+                this.scopeProvider.GetOrCreateScope().ResolveOrDefault(serviceType);
 
         /// <inheritdoc />
         public IEnumerable<object> GetServices(Type serviceType) =>
