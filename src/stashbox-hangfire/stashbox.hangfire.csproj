@@ -24,7 +24,7 @@
 
   <ItemGroup>
     <PackageReference Include="Hangfire.Core" Version="1.7.16" />
-    <PackageReference Include="Stashbox" Version="5.8.1" />
+    <PackageReference Include="Stashbox" Version="5.8.2" />
   </ItemGroup>
 
   <ItemGroup>
