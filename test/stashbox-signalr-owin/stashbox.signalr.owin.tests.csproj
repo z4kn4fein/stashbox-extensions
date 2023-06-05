@@ -75,8 +75,8 @@
     <Reference Include="SignalR.Tests.Common, Version=1.0.9.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\SignalR.Tests.1.0.9\lib\net45\SignalR.Tests.Common.dll</HintPath>
     </Reference>
-    <Reference Include="Stashbox, Version=5.8.2.0, Culture=neutral, PublicKeyToken=9778e33426732b68, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Stashbox.5.8.2\lib\net45\Stashbox.dll</HintPath>
+    <Reference Include="Stashbox, Version=5.10.0.0, Culture=neutral, PublicKeyToken=9778e33426732b68, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Stashbox.5.10.0\lib\net45\Stashbox.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
