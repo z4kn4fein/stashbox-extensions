@@ -1,4 +1,4 @@
-# stashbox-signalr-owin [![Build status](https://img.shields.io/appveyor/ci/pcsajtai/stashbox-extensions/main.svg?label=appveyor)](https://ci.appveyor.com/project/pcsajtai/stashbox-extensions/branch/main) [![NuGet Version](https://buildstats.info/nuget/Stashbox.AspNet.SignalR.Owin)](https://www.nuget.org/packages/Stashbox.AspNet.SignalR.Owin/)
+# stashbox-signalr-owin [![Build status](https://img.shields.io/appveyor/ci/pcsajtai/stashbox-extensions/main.svg?label=appveyor)](https://ci.appveyor.com/project/pcsajtai/stashbox-extensions/branch/main) [![NuGet Version](https://img.shields.io/nuget/v/Stashbox.AspNet.SignalR.Owin)](https://www.nuget.org/packages/Stashbox.AspNet.SignalR.Owin/)
 ASP.NET SignalR OWIN integration for Stashbox which provides the same functionality as the [standard SignalR integration](https://github.com/z4kn4fein/stashbox-extensions/tree/main/src/stashbox-signalr) but it contains `IAppBuilder` extensions and it sets the `HubConfiguration.Resolver` to the stashbox default dependency resolver instead of the `GlobalHost.DependencyResolver`.
 
 ## Usage

@@ -1,5 +1,5 @@
 # stashbox-hangfire 
-[![Appveyor build status](https://img.shields.io/appveyor/ci/pcsajtai/stashbox-extensions/main.svg?label=appveyor)](https://ci.appveyor.com/project/pcsajtai/stashbox-extensions/branch/main) [![Travis CI build status](https://img.shields.io/travis/com/z4kn4fein/stashbox-extensions/main.svg?label=travis-ci)](https://travis-ci.com/z4kn4fein/stashbox-extensions) [![NuGet Version](https://buildstats.info/nuget/Hangfire.Stashbox)](https://www.nuget.org/packages/Hangfire.Stashbox/)
+[![Appveyor build status](https://img.shields.io/appveyor/ci/pcsajtai/stashbox-extensions/main.svg?label=appveyor)](https://ci.appveyor.com/project/pcsajtai/stashbox-extensions/branch/main) [![Travis CI build status](https://img.shields.io/travis/com/z4kn4fein/stashbox-extensions/main.svg?label=travis-ci)](https://travis-ci.com/z4kn4fein/stashbox-extensions) [![NuGet Version](https://img.shields.io/nuget/v/Hangfire.Stashbox)](https://www.nuget.org/packages/Hangfire.Stashbox/)
 
 This project provides [Stashbox](https://github.com/z4kn4fein/stashbox) integration for [Hangfire](https://www.hangfire.io/), using Stashbox container and Scopes to resolve jobs and their dependencies.
 

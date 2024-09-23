@@ -1,4 +1,4 @@
-# stashbox-signalr [![Build status](https://img.shields.io/appveyor/ci/pcsajtai/stashbox-extensions/main.svg?label=appveyor)](https://ci.appveyor.com/project/pcsajtai/stashbox-extensions/branch/main) [![NuGet Version](https://buildstats.info/nuget/Stashbox.AspNet.SignalR)](https://www.nuget.org/packages/Stashbox.AspNet.SignalR/)
+# stashbox-signalr [![Build status](https://img.shields.io/appveyor/ci/pcsajtai/stashbox-extensions/main.svg?label=appveyor)](https://ci.appveyor.com/project/pcsajtai/stashbox-extensions/branch/main) [![NuGet Version](https://img.shields.io/nuget/v/Stashbox.AspNet.SignalR)](https://www.nuget.org/packages/Stashbox.AspNet.SignalR/)
 ASP.NET SignalR integration for Stashbox which provides dependency injection for SignalR hubs and persistent connections.
 
 ## Usage
